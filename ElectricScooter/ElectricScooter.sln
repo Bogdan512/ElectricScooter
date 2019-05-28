@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricScooter", "ElectricScooter\ElectricScooter.csproj", "{23FC442D-9013-4064-A1B5-3D8CACC5C2CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectricScooter.Test", "ElectricScooter.Test\ElectricScooter.Test.csproj", "{E81C875C-D0D9-4C00-BAE4-63CED5F40369}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23FC442D-9013-4064-A1B5-3D8CACC5C2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FC442D-9013-4064-A1B5-3D8CACC5C2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FC442D-9013-4064-A1B5-3D8CACC5C2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FC442D-9013-4064-A1B5-3D8CACC5C2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81C875C-D0D9-4C00-BAE4-63CED5F40369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81C875C-D0D9-4C00-BAE4-63CED5F40369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81C875C-D0D9-4C00-BAE4-63CED5F40369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81C875C-D0D9-4C00-BAE4-63CED5F40369}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CAE00AA-449B-472E-9441-8764F9D5445C}
+	EndGlobalSection
+EndGlobal
