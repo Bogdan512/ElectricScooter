@@ -6,11 +6,11 @@ namespace ElectricScooter
     public class ScooterTests
     {
         [Fact]
-        public void Should_Return_The_Type_OF_Scooter_Depending_Of_The_Persons_Weight()
+        public void Should_Return_Nrs_Of_Scooters_The_Type_And_Hours()
         {
-            Scooter scooter = new Scooter(70);
-            string actual = scooter.Print();
-            Assert.Equal("Adult", actual);
+            var scooters = new Scooter(2, "Adult", 4);
+            string actual = scooters.Print();
+            Assert.Equal("2 - Adult - 4", actual);
         }
     }
 }

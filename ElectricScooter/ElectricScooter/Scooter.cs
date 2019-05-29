@@ -6,16 +6,20 @@ namespace ElectricScooter
 {
     public class Scooter
     {
-        int kg;
+        int nrOfScooters;
+        string typeOfScooters;
+        int nrOfHours;
 
-        public Scooter(int kg)
+        public Scooter(int nrOfScooters, string typeOfScooters, int nrOfHours)
         {
-            this.kg = kg;
+            this.nrOfScooters = nrOfScooters;
+            this.typeOfScooters = typeOfScooters;
+            this.nrOfHours = nrOfHours;
         }
 
         public string Print()
         {
-            return kg <= 35 ? "Child" : "Adult";
+            return $"{nrOfScooters} - {typeOfScooters} - {nrOfHours}";
         }
     }
 }
