@@ -4,13 +4,13 @@ using System.Text;
 
 namespace ElectricScooter
 {
-    public class Scooter
+    public class Rent
     {
         int nrOfScooters;
         string typeOfScooters;
         int nrOfHours;
 
-        public Scooter(int nrOfScooters, string typeOfScooters, int nrOfHours)
+        public Rent(int nrOfScooters, string typeOfScooters, int nrOfHours)
         {
             this.nrOfScooters = nrOfScooters;
             this.typeOfScooters = typeOfScooters;
