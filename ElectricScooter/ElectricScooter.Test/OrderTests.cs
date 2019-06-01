@@ -12,8 +12,8 @@ namespace ElectricScooter.Test
         {
             var order = new Order(new Rent[]
                 {
-                    new Rent(2, "Adults", 4),
-                    new Rent(2, "Kids", 4),
+                    new Rent(2, TypeOfScooters.Adults, 4),
+                    new Rent(2, TypeOfScooters.Kids, 4),
                 });
             string[] expected = { "2 - Adults - 4", "2 - Kids - 4" };
             string[] actual = order.Print();
@@ -25,8 +25,8 @@ namespace ElectricScooter.Test
         {
             var order = new Order(new Rent[]
                 {
-                    new Rent(2, "Adults", 1),
-                    new Rent(2, "Kids", 1)
+                    new Rent(2, TypeOfScooters.Adults, 1),
+                    new Rent(2, TypeOfScooters.Kids, 1)
                 });
             decimal actual = order.GetSumOfOrder();
             Assert.Equal(60, actual);
@@ -37,8 +37,8 @@ namespace ElectricScooter.Test
         {
             var order = new Order(new Rent[]
                 {
-                    new Rent(2, "Adults", 4),
-                    new Rent(2, "Kids", 4)
+                    new Rent(2, TypeOfScooters.Adults, 4),
+                    new Rent(2, TypeOfScooters.Kids, 4)
                 });
             decimal actual = order.GetSumOfOrder();
             Assert.Equal(160, actual);

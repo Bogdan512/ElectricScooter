@@ -13,21 +13,19 @@ namespace ElectricScooter
         decimal fullDayCostAdults = 150;
         decimal fullDayCostKids = 100;
 
-        Order order;
-
-        public decimal GetHourlyCost(string adultOrKid)
+        public decimal GetHourlyCost(TypeOfScooters adultOrKid)
         {
-            return adultOrKid == "Adults" ? 20 : 10;
+            return adultOrKid == TypeOfScooters.Adults ? 20 : 10;
         }
 
-        public decimal GetFourHourCost(string adultOrKid)
+        public decimal GetFourHourCost(TypeOfScooters adultOrKid)
         {
-            return adultOrKid == "Adults" ? 50 : 30;
+            return adultOrKid == TypeOfScooters.Adults ? 50 : 30;
         }
 
-        public decimal GetFullDayCost(string adultOrKid)
+        public decimal GetFullDayCost(TypeOfScooters adultOrKid)
         {
-            return adultOrKid == "Adults" ? 150 : 100;
+            return adultOrKid == TypeOfScooters.Adults ? 150 : 100;
         }
     }
 }

@@ -4,15 +4,17 @@ using System.Text;
 
 namespace ElectricScooter
 {
+    public enum TypeOfScooters { Adults, Kids };
     public class Rent
     {
         int nrOfScooters;
-        string typeOfScooters;
+        TypeOfScooters typeOfScooters;
         int nrOfHours;
         Payment payment = new Payment();
-        Order order;
 
-        public Rent(int nrOfScooters, string typeOfScooters, int nrOfHours)
+        
+
+        public Rent(int nrOfScooters, TypeOfScooters typeOfScooters, int nrOfHours)
         {
             this.nrOfScooters = nrOfScooters;
             this.typeOfScooters = typeOfScooters;
@@ -24,63 +26,37 @@ namespace ElectricScooter
             return $"{nrOfScooters} - {typeOfScooters} - {nrOfHours}"; 
         }
 
-        public decimal GetHourlyCostKids()
-        {
-            decimal result = payment.GetHourlyCost("Kids");
-            return result;
-        }
-
-        public decimal GetFourHourCostKids()
-        {
-            decimal result = payment.GetFourHourCost("Kids");
-            return result;
-        }
-
-        public decimal GetFullDayCostKids()
-        {
-            decimal result = payment.GetFullDayCost("Kids");
-            return result;
-        }
-
-        public decimal GetHourlyCostAdults()
-        {
-            decimal result = payment.GetHourlyCost("Adults");
-            return result;
-        }
-
-        public decimal GetFourHourCostAdults()
-        {
-            decimal result = payment.GetFourHourCost("Adults");
-            return result;
-        }
-
-        public decimal GetFullDayCostAdults()
-        {
-            decimal result = payment.GetFullDayCost("Adults");
-            return result;
-        }
-
-        public decimal CaluclateOrder(Rent rent)
+        public decimal GetPrice()
         {
             decimal result = 0;
-            if(rent.typeOfScooters == "Adults" && rent.nrOfHours == 1)
+            if(typeOfScooters == TypeOfScooters.Adults && nrOfHours == 1)
             {
-                result = rent.nrOfScooters * GetHourlyCostAdults();
+                return nrOfScooters * payment.GetHourlyCost(TypeOfScooters.Adults);
             }
 
-            if (rent.typeOfScooters == "Kids" && rent.nrOfHours == 1)
+            if (typeOfScooters == TypeOfScooters.Kids && nrOfHours == 1)
             {
-                result = rent.nrOfScooters * GetHourlyCostKids();
+                return nrOfScooters * payment.GetHourlyCost(TypeOfScooters.Kids);
             }
 
-            if (rent.typeOfScooters == "Adults" && rent.nrOfHours == 4)
+            if (typeOfScooters == TypeOfScooters.Adults && nrOfHours == 4)
             {
-                result = rent.nrOfScooters * GetFourHourCostAdults();
+                return nrOfScooters * payment.GetFourHourCost(TypeOfScooters.Adults);
             }
 
-            if (rent.typeOfScooters == "Kids" && rent.nrOfHours == 4)
+            if (typeOfScooters == TypeOfScooters.Kids && nrOfHours == 4)
             {
-                result = rent.nrOfScooters * GetFourHourCostKids();
+                return nrOfScooters * payment.GetFourHourCost(TypeOfScooters.Kids);
+            }
+
+            if (typeOfScooters == TypeOfScooters.Adults && nrOfHours == 24)
+            {
+                return nrOfScooters * payment.GetFullDayCost(TypeOfScooters.Adults);
+            }
+
+            if (typeOfScooters == TypeOfScooters.Kids && nrOfHours == 24)
+            {
+                return nrOfScooters * payment.GetFullDayCost(TypeOfScooters.Kids);
             }
             return result;
         }

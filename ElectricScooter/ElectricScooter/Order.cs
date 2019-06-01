@@ -28,7 +28,7 @@ namespace ElectricScooter
             decimal result = 0;
             for (int i = 0; i < rents.Length; i++)
             {
-                result += rents[i].CaluclateOrder(rents[i]);
+                result += rents[i].GetPrice();
             }
             return result;
         }
