@@ -9,6 +9,7 @@ namespace ElectricScooter
         int nrOfScooters;
         string typeOfScooters;
         int nrOfHours;
+        Payment payment = new Payment();
 
         public Rent(int nrOfScooters, string typeOfScooters, int nrOfHours)
         {
@@ -17,9 +18,23 @@ namespace ElectricScooter
             this.nrOfHours = nrOfHours;
         }
 
-        public string Print()
+
+        public decimal GetHourlyCostKids()
         {
-            return $"{nrOfScooters} - {typeOfScooters} - {nrOfHours}";
+            decimal result = payment.GetHourlyCost("Kids");
+            return result;
+        }
+
+        public decimal GetFourHourCostKids()
+        {
+            decimal result = payment.GetFourHourCost("Kids");
+            return result;
+        }
+
+        public decimal GetFullDayCostKids()
+        {
+            decimal result = payment.GetFullDayCost("Kids");
+            return result;
         }
     }
 }

@@ -8,13 +8,29 @@ namespace ElectricScooter.Test
     public class RentTests
     {
         [Fact]
-        public void Should_Return_An_Order()
+        public void Should_Return_One_Hour_Cost_Kids_1_Scooter()
         {
-            var rent = new Rent(2, "Adults", 4);
-
-            string actual = rent.Print();
-            string expected = "2 - Adults - 4";
-            Assert.Equal(expected, actual);
+            Rent rent = new Rent(1, "Kids", 1);
+            decimal actual = rent.GetHourlyCostKids();
+            Assert.Equal(10, actual);
         }
+
+        [Fact]
+        public void Should_Return_Four_Hour_Cost_Kids_1_Scooter()
+        {
+            Rent rent = new Rent(1, "Kids", 1);
+            decimal actual = rent.GetFourHourCostKids();
+            Assert.Equal(30, actual);
+        }
+
+        [Fact]
+        public void Should_Return_FullDay_Cost_Kids_1_Scooter()
+        {
+            Rent rent = new Rent(1, "Kids", 1);
+            decimal actual = rent.GetFullDayCostKids();
+            Assert.Equal(100, actual);
+        }
+
+
     }
 }
