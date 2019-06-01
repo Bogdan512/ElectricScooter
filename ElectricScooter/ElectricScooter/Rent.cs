@@ -10,6 +10,7 @@ namespace ElectricScooter
         string typeOfScooters;
         int nrOfHours;
         Payment payment = new Payment();
+        Order order;
 
         public Rent(int nrOfScooters, string typeOfScooters, int nrOfHours)
         {
@@ -18,6 +19,10 @@ namespace ElectricScooter
             this.nrOfHours = nrOfHours;
         }
 
+        public string Print()
+        {
+            return $"{nrOfScooters} - {typeOfScooters} - {nrOfHours}"; 
+        }
 
         public decimal GetHourlyCostKids()
         {
@@ -54,5 +59,31 @@ namespace ElectricScooter
             decimal result = payment.GetFullDayCost("Adults");
             return result;
         }
+
+        public decimal CaluclateOrder(Rent rent)
+        {
+            decimal result = 0;
+            if(rent.typeOfScooters == "Adults" && rent.nrOfHours == 1)
+            {
+                result = rent.nrOfScooters * GetHourlyCostAdults();
+            }
+
+            if (rent.typeOfScooters == "Kids" && rent.nrOfHours == 1)
+            {
+                result = rent.nrOfScooters * GetHourlyCostKids();
+            }
+
+            if (rent.typeOfScooters == "Adults" && rent.nrOfHours == 4)
+            {
+                result = rent.nrOfScooters * GetFourHourCostAdults();
+            }
+
+            if (rent.typeOfScooters == "Kids" && rent.nrOfHours == 4)
+            {
+                result = rent.nrOfScooters * GetFourHourCostKids();
+            }
+            return result;
+        }
+
     }
 }
