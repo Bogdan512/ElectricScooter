@@ -36,5 +36,23 @@ namespace ElectricScooter
             decimal result = payment.GetFullDayCost("Kids");
             return result;
         }
+
+        public decimal GetHourlyCostAdults()
+        {
+            decimal result = payment.GetHourlyCost("Adults");
+            return result;
+        }
+
+        public decimal GetFourHourCostAdults()
+        {
+            decimal result = payment.GetFourHourCost("Adults");
+            return result;
+        }
+
+        public decimal GetFullDayCostAdults()
+        {
+            decimal result = payment.GetFullDayCost("Adults");
+            return result;
+        }
     }
 }
